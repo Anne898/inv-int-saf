@@ -180,11 +180,36 @@
   
     </div>
 
- 
-
-   
-
   <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+
+
+
+   <script>
+        // Desactivar el menú contextual sobre el video
+        document.getElementById('video').addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // Prevenir la descarga al mantener presionado en dispositivos móviles
+        document.getElementById('video').addEventListener('touchstart', function(e) {
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        });
+
+        document.getElementById('video').addEventListener('touchend', function(e) {
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        });
+
+        document.getElementById('video').addEventListener('touchmove', function(e) {
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        });
+    </script>
+  
 </body>
 
 </html>
